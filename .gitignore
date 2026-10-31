@@ -1,0 +1,13 @@
+build/
+build_*/
+*.exe
+*.o
+*.a
+*.dll
+*.nnue
+*.bak*
+__pycache__/
+books/
+datasets/
+games/
+logs/

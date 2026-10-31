@@ -1,0 +1,12 @@
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=ON
+      - run: cmake --build build -j
+      - run: ctest --test-dir build --output-on-failure
